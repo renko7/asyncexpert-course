@@ -7,6 +7,8 @@ namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
     [MemoryDiagnoser]
     public class FibonacciCalc
     {
+        private Dictionary<ulong, ulong> _memo;
+        
         // HOMEWORK:
         // 1. Write implementations for RecursiveWithMemoization and Iterative solutions
         // 2. Add MemoryDiagnoser to the benchmark
@@ -14,6 +16,12 @@ namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
         // 4. Open disassembler report and compare machine code
         // 
         // You can use the discussion panel to compare your results with other students
+
+        [GlobalSetup(Target = nameof(RecursiveWithMemoization))]
+        public void SetupMemoization()
+        {
+            _memo = new Dictionary<ulong, ulong>();
+        }
 
         [Benchmark(Baseline = true)]
         [ArgumentsSource(nameof(Data))]
@@ -27,14 +35,38 @@ namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
         [ArgumentsSource(nameof(Data))]
         public ulong RecursiveWithMemoization(ulong n)
         {
-            return 0;
+            if (n == 0)
+                return 0;
+            if (n == 1)
+                return 1;
+
+            if (_memo.TryGetValue(n, out ulong value))
+            {
+                return value;
+            }
+
+            var result = RecursiveWithMemoization(n - 1) + RecursiveWithMemoization(n - 2); 
+
+            _memo.Add(n, result);
+
+            return result;
         }
         
         [Benchmark]
         [ArgumentsSource(nameof(Data))]
         public ulong Iterative(ulong n)
         {
-            return 0;
+            ulong a = 0;
+            ulong b = 1;
+            
+            for (ulong i = 2; i <= n; i++)
+            {
+                ulong temp = a + b;
+                a = b;
+                b = temp;
+            }
+
+            return b;
         }
 
         public IEnumerable<ulong> Data()
