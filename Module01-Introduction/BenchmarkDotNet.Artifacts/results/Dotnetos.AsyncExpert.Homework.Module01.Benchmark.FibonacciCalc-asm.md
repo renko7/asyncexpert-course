@@ -19,11 +19,11 @@
        je        short M00_L00
        lea       rdx,[rdi+0FFFE]
        mov       rcx,rsi
-       call      qword ptr [7FFD6678E2E0]
+       call      qword ptr [7FFF8314E2E0]
        mov       rbp,rax
        lea       rdx,[rdi+0FFFF]
        mov       rcx,rsi
-       call      qword ptr [7FFD6678E2E0]
+       call      qword ptr [7FFF8314E2E0]
        add       rbp,rax
        jmp       short M00_L01
 M00_L00:
@@ -36,11 +36,11 @@ M00_L01:
        je        short M00_L02
        lea       rdx,[rbx+0FFFE]
        mov       rcx,rsi
-       call      qword ptr [7FFD6678E2E0]
+       call      qword ptr [7FFF8314E2E0]
        mov       rdi,rax
        lea       rdx,[rbx+0FFFF]
        mov       rcx,rsi
-       call      qword ptr [7FFD6678E2E0]
+       call      qword ptr [7FFF8314E2E0]
        add       rax,rdi
        jmp       short M00_L03
 M00_L02:
@@ -80,7 +80,7 @@ M00_L04:
        mov       rcx,[rsi+8]
        cmp       [rcx],cl
        mov       rdx,rbx
-       call      qword ptr [7FFD6678DFF8]
+       call      qword ptr [7FFF8315E010]
        test      rax,rax
        je        short M00_L00
        mov       rax,[rax]
@@ -92,18 +92,18 @@ M00_L04:
 M00_L00:
        lea       rdx,[rbx+0FFFF]
        mov       rcx,rsi
-       call      qword ptr [7FFD6678E2E0]
+       call      qword ptr [7FFF8315E2E0]
        mov       rdi,rax
        lea       rdx,[rbx+0FFFE]
        mov       rcx,rsi
-       call      qword ptr [7FFD6678E2E0]
+       call      qword ptr [7FFF8315E2E0]
        add       rdi,rax
        mov       rcx,[rsi+8]
        cmp       [rcx],cl
        mov       rdx,rbx
        mov       r8,rdi
        mov       r9d,2
-       call      qword ptr [7FFD6678E0E8]
+       call      qword ptr [7FFF8315E100]
        mov       rax,rdi
        add       rsp,20
        pop       rbx
@@ -213,7 +213,7 @@ M01_L06:
 M01_L07:
        mov       rcx,rdi
        mov       rdx,rsi
-       mov       r11,7FFD66630470
+       mov       r11,7FFF83000470
        call      qword ptr [r11]
        mov       r14d,eax
        mov       rdx,[rbx+8]
@@ -237,13 +237,13 @@ M01_L08:
        mov       rdx,[rbp+8]
        mov       rcx,rdi
        mov       r8,rsi
-       mov       r11,7FFD66630478
+       mov       r11,7FFF83000478
        call      qword ptr [r11]
        test      eax,eax
        jne       near ptr M01_L01
        jmp       near ptr M01_L04
 M01_L09:
-       call      qword ptr [7FFD6678F420]
+       call      qword ptr [7FFF8315F420]
        int       3
 M01_L10:
        call      CORINFO_HELP_RNGCHKFAIL
@@ -295,38 +295,32 @@ M00_L03:
        je        short M00_L04
        lea       rdi,[rbx+0FFFE]
        cmp       rdi,1
-       je        short M00_L00
+       je        short M00_L02
        cmp       rdi,2
-       je        short M00_L00
+       je        short M00_L02
        lea       rdx,[rdi+0FFFE]
        mov       rcx,rsi
-       call      qword ptr [7FFD6677E2E0]
+       call      qword ptr [7FFF8315E208]
        mov       rbp,rax
        lea       rdx,[rdi+0FFFF]
        mov       rcx,rsi
-       call      qword ptr [7FFD6677E2E0]
+       call      qword ptr [7FFF8315E208]
        add       rbp,rax
-       jmp       short M00_L01
 M00_L00:
-       mov       ebp,1
-M00_L01:
        dec       rbx
        cmp       rbx,1
-       je        short M00_L02
+       je        short M00_L03
        cmp       rbx,2
-       je        short M00_L02
+       je        short M00_L03
        lea       rdx,[rbx+0FFFE]
        mov       rcx,rsi
-       call      qword ptr [7FFD6677E2E0]
+       call      qword ptr [7FFF8315E208]
        mov       rdi,rax
        lea       rdx,[rbx+0FFFF]
        mov       rcx,rsi
-       call      qword ptr [7FFD6677E2E0]
+       call      qword ptr [7FFF8315E208]
        add       rax,rdi
-       jmp       short M00_L03
-M00_L02:
-       mov       eax,1
-M00_L03:
+M00_L01:
        add       rax,rbp
        add       rsp,28
        pop       rbx
@@ -334,6 +328,12 @@ M00_L03:
        pop       rsi
        pop       rdi
        ret
+M00_L02:
+       mov       ebp,1
+       jmp       short M00_L00
+M00_L03:
+       mov       eax,1
+       jmp       short M00_L01
 M00_L04:
        mov       eax,1
        add       rsp,28
@@ -361,7 +361,7 @@ M00_L04:
        mov       rcx,[rsi+8]
        cmp       [rcx],cl
        mov       rdx,rbx
-       call      qword ptr [7FFD6678DF38]
+       call      qword ptr [7FFF8314DFF8]
        test      rax,rax
        je        short M00_L00
        mov       rax,[rax]
@@ -373,18 +373,18 @@ M00_L04:
 M00_L00:
        lea       rdx,[rbx+0FFFF]
        mov       rcx,rsi
-       call      qword ptr [7FFD6678E208]
+       call      qword ptr [7FFF8314E2E0]
        mov       rdi,rax
        lea       rdx,[rbx+0FFFE]
        mov       rcx,rsi
-       call      qword ptr [7FFD6678E208]
+       call      qword ptr [7FFF8314E2E0]
        add       rdi,rax
        mov       rcx,[rsi+8]
        cmp       [rcx],cl
        mov       rdx,rbx
        mov       r8,rdi
        mov       r9d,2
-       call      qword ptr [7FFD6678E028]
+       call      qword ptr [7FFF8314E0E8]
        mov       rax,rdi
        add       rsp,20
        pop       rbx
@@ -494,7 +494,7 @@ M01_L06:
 M01_L07:
        mov       rcx,rdi
        mov       rdx,rsi
-       mov       r11,7FFD66630470
+       mov       r11,7FFF82FF0470
        call      qword ptr [r11]
        mov       r14d,eax
        mov       rdx,[rbx+8]
@@ -518,13 +518,13 @@ M01_L08:
        mov       rdx,[rbp+8]
        mov       rcx,rdi
        mov       r8,rsi
-       mov       r11,7FFD66630478
+       mov       r11,7FFF82FF0478
        call      qword ptr [r11]
        test      eax,eax
        jne       near ptr M01_L01
        jmp       near ptr M01_L04
 M01_L09:
-       call      qword ptr [7FFD6678F348]
+       call      qword ptr [7FFF8314F420]
        int       3
 M01_L10:
        call      CORINFO_HELP_RNGCHKFAIL
