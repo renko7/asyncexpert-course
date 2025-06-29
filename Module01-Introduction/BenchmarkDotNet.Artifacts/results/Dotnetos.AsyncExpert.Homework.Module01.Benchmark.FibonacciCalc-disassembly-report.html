@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc-20250628-153549</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="2">FibonacciCalc.Recursive</th></tr>
+<tr>
+<th>.NET Core 9.0.6 (CoreCLR 9.0.625.26613, CoreFX 9.0.625.26613), X64 RyuJIT</th>
+<th>.NET Core 9.0.6 (CoreCLR 9.0.625.26613, CoreFX 9.0.625.26613), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Recursive(UInt64)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rbx,rdx
+cmp       rbx,1
+je        near ptr 00007FFF83146F17
+cmp       rbx,2
+je        short 00007FFF83146F17
+lea       rdi,[rbx+0FFFE]
+cmp       rdi,1
+je        short 00007FFF83146ED0
+cmp       rdi,2
+je        short 00007FFF83146ED0
+lea       rdx,[rdi+0FFFE]
+mov       rcx,rsi
+call      qword ptr [7FFF8314E2E0]
+mov       rbp,rax
+lea       rdx,[rdi+0FFFF]
+mov       rcx,rsi
+call      qword ptr [7FFF8314E2E0]
+add       rbp,rax
+jmp       short 00007FFF83146ED5
+mov       ebp,1
+dec       rbx
+cmp       rbx,1
+je        short 00007FFF83146F06
+cmp       rbx,2
+je        short 00007FFF83146F06
+lea       rdx,[rbx+0FFFE]
+mov       rcx,rsi
+call      qword ptr [7FFF8314E2E0]
+mov       rdi,rax
+lea       rdx,[rbx+0FFFF]
+mov       rcx,rsi
+call      qword ptr [7FFF8314E2E0]
+add       rax,rdi
+jmp       short 00007FFF83146F0B
+mov       eax,1
+add       rax,rbp
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+mov       eax,1
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Recursive(UInt64)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rbx,rdx
+cmp       rbx,1
+je        near ptr 00007FFF83154C87
+cmp       rbx,2
+je        short 00007FFF83154C87
+lea       rdi,[rbx+0FFFE]
+cmp       rdi,1
+je        short 00007FFF83154C79
+cmp       rdi,2
+je        short 00007FFF83154C79
+lea       rdx,[rdi+0FFFE]
+mov       rcx,rsi
+call      qword ptr [7FFF8315E208]
+mov       rbp,rax
+lea       rdx,[rdi+0FFFF]
+mov       rcx,rsi
+call      qword ptr [7FFF8315E208]
+add       rbp,rax
+dec       rbx
+cmp       rbx,1
+je        short 00007FFF83154C80
+cmp       rbx,2
+je        short 00007FFF83154C80
+lea       rdx,[rbx+0FFFE]
+mov       rcx,rsi
+call      qword ptr [7FFF8315E208]
+mov       rdi,rax
+lea       rdx,[rbx+0FFFF]
+mov       rcx,rsi
+call      qword ptr [7FFF8315E208]
+add       rax,rdi
+add       rax,rbp
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+mov       ebp,1
+jmp       short 00007FFF83154C3E
+mov       eax,1
+jmp       short 00007FFF83154C6D
+mov       eax,1
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">FibonacciCalc.RecursiveWithMemoization</th></tr>
+<tr>
+<th>.NET Core 9.0.6 (CoreCLR 9.0.625.26613, CoreFX 9.0.625.26613), X64 RyuJIT</th>
+<th>.NET Core 9.0.6 (CoreCLR 9.0.625.26613, CoreFX 9.0.625.26613), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveWithMemoization(UInt64)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rbx,rdx
+test      rbx,rbx
+je        short 00007FFF8315A5F7
+cmp       rbx,1
+je        short 00007FFF8315A5EA
+mov       rcx,[rsi+8]
+cmp       [rcx],cl
+mov       rdx,rbx
+call      qword ptr [7FFF8315E010]
+test      rax,rax
+je        short 00007FFF8315A5A7
+mov       rax,[rax]
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+lea       rdx,[rbx+0FFFF]
+mov       rcx,rsi
+call      qword ptr [7FFF8315E2E0]
+mov       rdi,rax
+lea       rdx,[rbx+0FFFE]
+mov       rcx,rsi
+call      qword ptr [7FFF8315E2E0]
+add       rdi,rax
+mov       rcx,[rsi+8]
+cmp       [rcx],cl
+mov       rdx,rbx
+mov       r8,rdi
+mov       r9d,2
+call      qword ptr [7FFF8315E100]
+mov       rax,rdi
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       eax,1
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+xor       eax,eax
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].FindValue(UInt64)
+push      r15
+push      r14
+push      r13
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rbx,rcx
+mov       rsi,rdx
+mov       rax,[rbx+8]
+test      rax,rax
+je        near ptr 00007FFF8315A0CB
+mov       rdi,[rbx+18]
+test      rdi,rdi
+jne       near ptr 00007FFF8315A0DC
+mov       rcx,rsi
+shr       rcx,20
+xor       ecx,esi
+mov       edx,ecx
+imul      rdx,[rbx+30]
+shr       rdx,20
+inc       rdx
+mov       r11d,[rax+8]
+mov       r8d,r11d
+imul      rdx,r8
+shr       rdx,20
+cmp       edx,r11d
+jae       near ptr 00007FFF8315A158
+mov       edx,edx
+lea       rax,[rax+rdx*4+10]
+mov       edx,[rax]
+mov       r11,[rbx+10]
+xor       r8d,r8d
+dec       edx
+mov       r10d,[r11+8]
+cmp       r10d,edx
+jbe       short 00007FFF8315A0CB
+mov       eax,edx
+lea       rax,[rax+rax*2]
+lea       rbp,[r11+rax*8+10]
+cmp       [rbp],ecx
+jne       short 00007FFF8315A0CF
+cmp       [rbp+8],rsi
+jne       short 00007FFF8315A0CF
+lea       rax,[rbp+10]
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r13
+pop       r14
+pop       r15
+ret
+mov       r13d,[rbx+8]
+cmp       r13d,edx
+jbe       short 00007FFF8315A0CB
+mov       edx,edx
+lea       rdx,[rdx+rdx*2]
+lea       rbp,[rbx+rdx*8+10]
+cmp       [rbp],r14d
+je        short 00007FFF8315A12D
+mov       edx,[rbp+4]
+inc       r15d
+cmp       r13d,r15d
+jae       short 00007FFF8315A0A1
+jmp       near ptr 00007FFF8315A151
+xor       eax,eax
+jmp       short 00007FFF8315A092
+mov       edx,[rbp+4]
+inc       r8d
+cmp       r10d,r8d
+jae       short 00007FFF8315A073
+jmp       short 00007FFF8315A151
+mov       rcx,rdi
+mov       rdx,rsi
+mov       r11,7FFF83000470
+call      qword ptr [r11]
+mov       r14d,eax
+mov       rdx,[rbx+8]
+mov       ecx,r14d
+imul      rcx,[rbx+30]
+shr       rcx,20
+inc       rcx
+mov       r8d,[rdx+8]
+imul      rcx,r8
+shr       rcx,20
+cmp       ecx,[rdx+8]
+jae       short 00007FFF8315A158
+mov       ecx,ecx
+lea       rdx,[rdx+rcx*4+10]
+mov       edx,[rdx]
+mov       rbx,[rbx+10]
+xor       r15d,r15d
+dec       edx
+jmp       near ptr 00007FFF8315A0A1
+mov       rdx,[rbp+8]
+mov       rcx,rdi
+mov       r8,rsi
+mov       r11,7FFF83000478
+call      qword ptr [r11]
+test      eax,eax
+jne       near ptr 00007FFF8315A08E
+jmp       near ptr 00007FFF8315A0BB
+call      qword ptr [7FFF8315F420]
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveWithMemoization(UInt64)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rbx,rdx
+test      rbx,rbx
+je        short 00007FFF8314A457
+cmp       rbx,1
+je        short 00007FFF8314A44A
+mov       rcx,[rsi+8]
+cmp       [rcx],cl
+mov       rdx,rbx
+call      qword ptr [7FFF8314DFF8]
+test      rax,rax
+je        short 00007FFF8314A407
+mov       rax,[rax]
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+lea       rdx,[rbx+0FFFF]
+mov       rcx,rsi
+call      qword ptr [7FFF8314E2E0]
+mov       rdi,rax
+lea       rdx,[rbx+0FFFE]
+mov       rcx,rsi
+call      qword ptr [7FFF8314E2E0]
+add       rdi,rax
+mov       rcx,[rsi+8]
+cmp       [rcx],cl
+mov       rdx,rbx
+mov       r8,rdi
+mov       r9d,2
+call      qword ptr [7FFF8314E0E8]
+mov       rax,rdi
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       eax,1
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+xor       eax,eax
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].FindValue(UInt64)
+push      r15
+push      r14
+push      r13
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rbx,rcx
+mov       rsi,rdx
+mov       rax,[rbx+8]
+test      rax,rax
+je        near ptr 00007FFF8314A0CB
+mov       rdi,[rbx+18]
+test      rdi,rdi
+jne       near ptr 00007FFF8314A0DC
+mov       rcx,rsi
+shr       rcx,20
+xor       ecx,esi
+mov       edx,ecx
+imul      rdx,[rbx+30]
+shr       rdx,20
+inc       rdx
+mov       r11d,[rax+8]
+mov       r8d,r11d
+imul      rdx,r8
+shr       rdx,20
+cmp       edx,r11d
+jae       near ptr 00007FFF8314A158
+mov       edx,edx
+lea       rax,[rax+rdx*4+10]
+mov       edx,[rax]
+mov       r11,[rbx+10]
+xor       r8d,r8d
+dec       edx
+mov       r10d,[r11+8]
+cmp       r10d,edx
+jbe       short 00007FFF8314A0CB
+mov       eax,edx
+lea       rax,[rax+rax*2]
+lea       rbp,[r11+rax*8+10]
+cmp       [rbp],ecx
+jne       short 00007FFF8314A0CF
+cmp       [rbp+8],rsi
+jne       short 00007FFF8314A0CF
+lea       rax,[rbp+10]
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r13
+pop       r14
+pop       r15
+ret
+mov       r13d,[rbx+8]
+cmp       r13d,edx
+jbe       short 00007FFF8314A0CB
+mov       edx,edx
+lea       rdx,[rdx+rdx*2]
+lea       rbp,[rbx+rdx*8+10]
+cmp       [rbp],r14d
+je        short 00007FFF8314A12D
+mov       edx,[rbp+4]
+inc       r15d
+cmp       r13d,r15d
+jae       short 00007FFF8314A0A1
+jmp       near ptr 00007FFF8314A151
+xor       eax,eax
+jmp       short 00007FFF8314A092
+mov       edx,[rbp+4]
+inc       r8d
+cmp       r10d,r8d
+jae       short 00007FFF8314A073
+jmp       short 00007FFF8314A151
+mov       rcx,rdi
+mov       rdx,rsi
+mov       r11,7FFF82FF0470
+call      qword ptr [r11]
+mov       r14d,eax
+mov       rdx,[rbx+8]
+mov       ecx,r14d
+imul      rcx,[rbx+30]
+shr       rcx,20
+inc       rcx
+mov       r8d,[rdx+8]
+imul      rcx,r8
+shr       rcx,20
+cmp       ecx,[rdx+8]
+jae       short 00007FFF8314A158
+mov       ecx,ecx
+lea       rdx,[rdx+rcx*4+10]
+mov       edx,[rdx]
+mov       rbx,[rbx+10]
+xor       r15d,r15d
+dec       edx
+jmp       near ptr 00007FFF8314A0A1
+mov       rdx,[rbp+8]
+mov       rcx,rdi
+mov       r8,rsi
+mov       r11,7FFF82FF0478
+call      qword ptr [r11]
+test      eax,eax
+jne       near ptr 00007FFF8314A08E
+jmp       near ptr 00007FFF8314A0BB
+call      qword ptr [7FFF8314F420]
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">FibonacciCalc.Iterative</th></tr>
+<tr>
+<th>.NET Core 9.0.6 (CoreCLR 9.0.625.26613, CoreFX 9.0.625.26613), X64 RyuJIT</th>
+<th>.NET Core 9.0.6 (CoreCLR 9.0.625.26613, CoreFX 9.0.625.26613), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Iterative(UInt64)
+xor       eax,eax
+mov       ecx,1
+mov       r8d,2
+cmp       rdx,2
+jb        short 00007FFF83156037
+nop       dword ptr [rax+rax]
+nop       dword ptr [rax+rax]
+add       rax,rcx
+inc       r8
+cmp       r8,rdx
+jbe       short 00007FFF8315602C
+ret
+mov       r9,rax
+mov       rax,rcx
+mov       rcx,r9
+jmp       short 00007FFF83156020
+mov       rax,rcx
+jmp       short 00007FFF8315602B
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Iterative(UInt64)
+xor       eax,eax
+mov       ecx,1
+mov       r8d,2
+cmp       rdx,2
+jb        short 00007FFF83166037
+nop       dword ptr [rax+rax]
+nop       dword ptr [rax+rax]
+add       rax,rcx
+inc       r8
+cmp       r8,rdx
+jbe       short 00007FFF8316602C
+ret
+mov       r9,rax
+mov       rax,rcx
+mov       rcx,r9
+jmp       short 00007FFF83166020
+mov       rax,rcx
+jmp       short 00007FFF8316602B
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
